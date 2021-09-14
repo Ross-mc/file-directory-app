@@ -1,29 +1,38 @@
-import { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import fileContext from '../store/fileContext';
-import { FileType } from '../types/file';
+import Folder from '../components/Folder';
+import File from '../components/File';
 import useFileSearch from '../utils/search';
+import { useContext } from 'react';
+import fileContext from '../store/fileContext';
+import ErrorMessage from '../components/UI/Error';
 
 const Documents: React.FC = () => {
   const { pathname } = useLocation();
-  const [currentItem, setCurrentItem] = useState<
-    FileType | FileType[] | undefined
-  >(undefined);
+
+  const files = useContext(fileContext).fileData;
+
+  const item = useFileSearch(pathname.replace('/documents/', ''));
 
   if (
     pathname.toLowerCase() === '/documents/' ||
     pathname.toLowerCase() === '/documents'
   ) {
-    console.log('placeholder');
-  }
-  try {
-    const item = useFileSearch(pathname.replace('/documents/', ''));
-    setCurrentItem(item);
-  } catch (error) {
-    console.log(error);
+    return <Folder name={''} files={files} />;
   }
 
-  return <h1>Documents</h1>;
+  if (!item) {
+    return <ErrorMessage message={'Error. Directory Not Found!'} />;
+  }
+
+  return (
+    <>
+      {item?.type === 'folder' ? (
+        <Folder name={item.name} files={item.files} />
+      ) : (
+        <File name={item.name} added={item.added} type={item.type} />
+      )}
+    </>
+  );
 };
 
 export default Documents;

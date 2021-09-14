@@ -5,7 +5,7 @@ import { FileType } from "../types/file";
 const useFileSearch = (path: string) => {
   const fileCtx = useContext(fileContext);
   const pathArr = path.split("/");
-  if (pathArr[pathArr.length -1] === "/"){
+  if (pathArr[pathArr.length -1] === ""){
     pathArr.pop();
   }
   let currentPath = pathArr.shift();
@@ -14,7 +14,7 @@ const useFileSearch = (path: string) => {
   while(searching){
     let currentItem = currentArr.find(item => item.name.toLowerCase() === currentPath?.toLowerCase());
     if(!currentItem){
-      throw new Error('Invalid directory path');
+      return null
     }
     if (currentItem.name.toLowerCase() === currentPath?.toLowerCase()){
       if (currentItem.type === "folder"){
