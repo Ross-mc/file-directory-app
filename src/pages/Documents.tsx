@@ -7,7 +7,7 @@ import fileContext from '../store/fileContext';
 import ErrorMessage from '../components/UI/Error';
 
 const Documents: React.FC = () => {
-  const { pathname } = useLocation();
+  const pathname = useLocation().pathname.replaceAll('%20', ' ');
 
   const files = useContext(fileContext).fileData;
 
