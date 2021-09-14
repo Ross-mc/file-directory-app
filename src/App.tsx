@@ -1,8 +1,15 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <p>Hello World</p>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
