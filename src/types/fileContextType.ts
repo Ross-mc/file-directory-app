@@ -1,6 +1,6 @@
-import { FileType, FlattenedFileType } from "./file";
+import { FileType } from "./file";
 
 export interface FileContextType {
   fileData: Array<FileType>,
-  flattenedFileData: Array<FlattenedFileType>,
+  flattenedFileData: Array<FileType>,
 }

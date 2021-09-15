@@ -26,6 +26,11 @@ const files: Array<FileType> = [
         added: '2017-05-03'
       },
       {
+        type: 'doc',
+        name: 'Meals',
+        added: '2021-08-15'
+      },
+      {
         type: 'folder',
         name: 'historical',
         files: [
@@ -38,11 +43,6 @@ const files: Array<FileType> = [
             type: 'doc',
             name: 'Stationary',
             added: '2013-05-03'
-          },
-          {
-            type: 'doc',
-            name: 'Meals',
-            added: '2015-08-15'
           }
         ]
       }

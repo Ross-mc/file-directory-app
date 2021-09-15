@@ -20,7 +20,18 @@ describe('useFileSearch.ts', () => {
     const expected = {
       type: 'folder',
       name: 'Expenses',
-      files: [{ type: 'doc', name: 'Expenses_claim_form', added: '2000-05-02' }]
+      files: [
+        {
+          type: 'doc',
+          name: 'Expenses_claim_form',
+          added: '2000-05-02'
+        },
+        {
+          type: 'pdf',
+          name: 'EmployeeHandbook',
+          added: '2016-12-06'
+        }
+      ]
     };
     expect(result).toStrictEqual(expected);
   });

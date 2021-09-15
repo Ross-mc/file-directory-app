@@ -11,6 +11,7 @@ const dummyFiles: Array<FileType> = [
     name: 'Public Holiday policy',
     added: '2016-12-06'
   },
+  
   {
     type: 'folder',
     name: 'Expenses',
@@ -19,7 +20,12 @@ const dummyFiles: Array<FileType> = [
         type: 'doc',
         name: 'Expenses_claim_form',
         added: '2000-05-02'
-      }
+      },
+      {
+        type: 'pdf',
+        name: 'EmployeeHandbook',
+        added: '2016-12-06'
+      },
     ]
   }
 ];

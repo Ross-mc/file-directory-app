@@ -1,13 +1,13 @@
 import { FormEvent, useContext, useRef, useState } from 'react';
 import fileContext from '../../store/fileContext';
-import { FlattenedFileType } from '../../types/file';
+import { FileType } from '../../types/file';
 import fileSearchByName from '../../utils/fileSearchByName';
 import Folder from '../Folder';
 import ErrorMessage from '../UI/Error';
 
 const SearchBar: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [files, setFiles] = useState<Array<FlattenedFileType>>([]);
+  const [files, setFiles] = useState<Array<FileType>>([]);
   const searchInput = useRef<HTMLInputElement>(null);
   const fileCtx = useContext(fileContext);
 

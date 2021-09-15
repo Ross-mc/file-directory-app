@@ -1,6 +1,6 @@
-import { FlattenedFileType } from '../types/file';
+import { FileType } from '../types/file';
 
-const fileSearchByName = (name: string, flatArray: FlattenedFileType[]) =>
+const fileSearchByName = (name: string, flatArray: FileType[]) =>
   flatArray.filter((file) =>
     file.name.toLowerCase().includes(name.toLowerCase())
   );
