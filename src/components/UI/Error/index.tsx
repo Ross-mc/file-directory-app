@@ -3,7 +3,7 @@ interface ErrorProps {
 }
 
 const ErrorMessage: React.FC<ErrorProps> = ({ message }) => {
-  return <div>{message}</div>;
+  return <div data-testid="error-component">{message}</div>;
 };
 
 export default ErrorMessage;

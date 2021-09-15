@@ -1,13 +1,13 @@
 import { useLocation } from 'react-router-dom';
+import useFileSearch from '../hooks/useFileSearch';
+import { useContext } from 'react';
 import Folder from '../components/Folder';
 import File from '../components/File';
-import useFileSearch from '../utils/search';
-import { useContext } from 'react';
 import fileContext from '../store/fileContext';
 import ErrorMessage from '../components/UI/Error';
 
 const Documents: React.FC = () => {
-  const pathname = useLocation().pathname.replaceAll('%20', ' ');
+  const pathname = useLocation().pathname;
 
   const files = useContext(fileContext).fileData;
 
