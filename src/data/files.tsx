@@ -38,6 +38,11 @@ const files: Array<FileType> = [
             type: 'doc',
             name: 'Stationary',
             added: '2013-05-03'
+          },
+          {
+            type: 'doc',
+            name: 'Meals',
+            added: '2015-08-15'
           }
         ]
       }

@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import useFileSearch from '../hooks/useFileSearch';
 import { useContext } from 'react';
 import Folder from '../components/Folder';
@@ -7,17 +7,20 @@ import fileContext from '../store/fileContext';
 import ErrorMessage from '../components/UI/Error';
 
 const Documents: React.FC = () => {
-  const pathname = useLocation().pathname;
-
-  const files = useContext(fileContext).fileData;
-
+  const { pathname } = useLocation();
+  const fileCtx = useContext(fileContext);
+  const files = fileCtx.fileData;
   const item = useFileSearch(pathname.replace('/documents/', ''));
 
   if (
     pathname.toLowerCase() === '/documents/' ||
     pathname.toLowerCase() === '/documents'
   ) {
-    return <Folder name={''} files={files} />;
+    return (
+      <>
+        <Folder name={''} files={files} />
+      </>
+    );
   }
 
   if (!item) {

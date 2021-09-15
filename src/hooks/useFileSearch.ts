@@ -4,14 +4,12 @@ import { FileType } from "../types/file";
 
 const useFileSearch = (path: string) => {
   const fileCtx = useContext(fileContext);
-  const pathArr = path.replace(/%20/g, "").split("/");
+  let currentArr: Array<FileType> = fileCtx.fileData;
+  let {currentItem, currentPath, pathArr} = setUpVariables(path, currentArr);
   if (pathArr[pathArr.length -1] === ""){
     pathArr.pop();
   }
-  let currentPath = pathArr.shift();
-  let currentArr: Array<FileType> = fileCtx.fileData;
   let searching = true;
-  let currentItem = currentArr.find(item => item.name.toLowerCase() === currentPath?.toLowerCase());
   while(searching){
     if(!currentItem){
       return null
@@ -31,6 +29,20 @@ const useFileSearch = (path: string) => {
         return currentItem;
       }
     }
+  }
+}
+
+const setUpVariables = (path: string, arr: Array<FileType>) => {
+  const pathArr = path.replace(/%20/g, "").split("/");
+  if (pathArr[pathArr.length -1] === ""){
+    pathArr.pop();
+  }
+  let currentPath = pathArr.shift();
+  let currentItem = arr.find(item => item.name.toLowerCase() === currentPath?.toLowerCase());
+  return {
+    pathArr,
+    currentPath,
+    currentItem
   }
 }
 
