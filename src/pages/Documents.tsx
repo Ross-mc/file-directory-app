@@ -1,4 +1,4 @@
-import { useLocation, useHistory, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import useFileSearch from '../hooks/useFileSearch';
 import { useContext } from 'react';
 import Folder from '../components/Folder';

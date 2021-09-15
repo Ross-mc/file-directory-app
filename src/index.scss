@@ -25,3 +25,20 @@ body {
 .btn-primary:hover {
   background-color: $lightblue;
 }
+
+.btn-secondary {
+  background-color: $green;
+  color: $black;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: $lightgreen;
+}
