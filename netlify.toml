@@ -1,6 +1,6 @@
 [build]
   command = "react-scripts build"
-  publish = "out"
+  publish = "build"
   [[redirects]]
    from = "/*"
    to = "/index.html"
