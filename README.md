@@ -16,7 +16,7 @@ To run the test suite run `npm run test`.
 
 ## Deployment
 
-Deployed through Netlify -> [link](tbc)
+Deployed through Netlify -> [link](https://file-directory-demo.netlify.app)
 
 ## Tech
 
