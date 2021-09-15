@@ -1,5 +1,5 @@
 [build]
-  command = "react-scripts build"
+  command = "CI=false npm run build"
   publish = "build"
   [[redirects]]
    from = "/*"
