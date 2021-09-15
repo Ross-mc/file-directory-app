@@ -1,11 +1,10 @@
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory, Link } from 'react-router-dom';
 import useFileSearch from '../hooks/useFileSearch';
 import { useContext } from 'react';
 import Folder from '../components/Folder';
 import File from '../components/File';
 import fileContext from '../store/fileContext';
-import ErrorMessage from '../components/UI/Error';
-import { Link } from 'react-router-dom';
+import ErrorComponent from '../components/UI/Error';
 
 const Documents: React.FC = () => {
   const { pathname } = useLocation();
@@ -20,12 +19,19 @@ const Documents: React.FC = () => {
     return (
       <>
         <Folder name={'Documents'} files={files} />
+        <Link to="/search" className="btn-primary">
+          Search for documents
+        </Link>
       </>
     );
   }
 
   if (!item) {
-    return <ErrorMessage message={'Error. Directory Not Found!'} />;
+    return (
+      <>
+        <ErrorComponent message={'Error. Directory Not Found!'} />
+      </>
+    );
   }
 
   return (

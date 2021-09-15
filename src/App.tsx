@@ -3,6 +3,7 @@ import MainContainer from './components/UI/Layout/MainContainer';
 import files from './data/files';
 import Documents from './pages/Documents';
 import Home from './pages/Home';
+import NoMatch from './pages/NoMatch';
 import Search from './pages/Search';
 import fileContext from './store/fileContext';
 import createFlatArray from './utils/createFlatArray';
@@ -21,15 +22,14 @@ const App: React.FC = () => {
             <Route exact path="/">
               <Home />
             </Route>
-          </Switch>
-          <Switch>
             <Route path="/documents">
               <Documents />
             </Route>
-          </Switch>
-          <Switch>
             <Route path="/search">
               <Search />
+            </Route>
+            <Route path="*">
+              <NoMatch />
             </Route>
           </Switch>
         </MainContainer>

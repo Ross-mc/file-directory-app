@@ -9,7 +9,6 @@ interface FileProps {
 }
 
 const Folder: React.FC<FileProps> = ({ files, name }) => {
-  console.log(files);
   return (
     <div data-testid="root-folder">
       <h3>{name}</h3>
