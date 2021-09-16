@@ -30,6 +30,7 @@ const useFileSearch = (path: string) => {
       }
     }
   }
+  return null
 }
 
 const setUpVariables = (path: string, arr: Array<FileType>) => {
